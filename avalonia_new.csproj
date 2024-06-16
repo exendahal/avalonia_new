@@ -58,8 +58,4 @@
       <SubType>Designer</SubType>
     </AvaloniaXaml>
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
 </Project>

@@ -14,7 +14,7 @@
         <ContentControl prism:RegionManager.RegionName="{x:Static region:RegionNames.CONTENT_REGION}" />
         <Panel
             x:Name="ToastContainer"
-            HorizontalAlignment="Left"
+            HorizontalAlignment="Center"
             VerticalAlignment="Bottom" />
     </Grid>
 </UserControl>

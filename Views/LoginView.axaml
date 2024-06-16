@@ -39,6 +39,7 @@
                         Padding="12,8"
                         HorizontalAlignment="Stretch"
                         HorizontalContentAlignment="Center"
+                        Command="{Binding LoginCommand}"
                         Content="Click Me"
                         Foreground="White" />
                 </Grid>
