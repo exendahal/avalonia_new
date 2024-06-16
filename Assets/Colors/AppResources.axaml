@@ -10,10 +10,10 @@
     <SolidColorBrush x:Key="WarningColor">#FFC107</SolidColorBrush>
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Dark">
-            <SolidColorBrush x:Key="ToastBackground" Color="{DynamicResource PrimaryDark}" />
+            <SolidColorBrush x:Key="ToastBackground">#242C32</SolidColorBrush>
         </ResourceDictionary>
         <ResourceDictionary x:Key="Light">
-            <SolidColorBrush x:Key="ToastBackground" Color="{DynamicResource WhiteColor}" />
+            <SolidColorBrush x:Key="ToastBackground">#FFFFFF</SolidColorBrush>
         </ResourceDictionary>
     </ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>

@@ -26,6 +26,34 @@
             FontSize="32"
             Text="{x:Static lang:Resources.About}" />
 
+        <TextBlock
+            HorizontalAlignment="Center"
+            Text="{x:Static lang:Resources.AboutApp}"
+            TextWrapping="Wrap" />
 
+        <Button
+            Grid.Row="10"
+            Padding="8,6"
+            HorizontalAlignment="Center"
+            HorizontalContentAlignment="Center"
+            VerticalContentAlignment="Center"
+            Command="{Binding GoToCommand}"
+            CommandParameter="4"
+            Foreground="{DynamicResource WhiteColor}">
+            <StackPanel
+                VerticalAlignment="Center"
+                Orientation="Horizontal"
+                Spacing="6">
+                <TextBlock
+                    Width="18"
+                    Height="18"
+                    VerticalAlignment="Center"
+                    FontFamily="{StaticResource Material-Font}"
+                    FontSize="18"
+                    Foreground="{DynamicResource WhiteColor}"
+                    Text="&#xf2a4;" />
+                <TextBlock FontSize="16" Text="Github" />
+            </StackPanel>
+        </Button>
     </StackPanel>
 </UserControl>

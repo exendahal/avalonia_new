@@ -120,6 +120,10 @@
   <data name="About" xml:space="preserve">
     <value>About</value>
   </data>
+  <data name="AboutApp" xml:space="preserve">
+    <value>This application is built using AvaloniaUI, a cross-platform framework for building modern UI applications.
+This serves as a starter template for building mobile applications using Avalonia.</value>
+  </data>
   <data name="EnterPassword" xml:space="preserve">
     <value>Enter password</value>
   </data>

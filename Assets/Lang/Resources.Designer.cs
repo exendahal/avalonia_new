@@ -70,6 +70,16 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This application is built using AvaloniaUI, a cross-platform framework for building modern UI applications.
+        ///This serves as a starter template for building mobile applications using Avalonia..
+        /// </summary>
+        public static string AboutApp {
+            get {
+                return ResourceManager.GetString("AboutApp", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter password.
         /// </summary>
         public static string EnterPassword {
