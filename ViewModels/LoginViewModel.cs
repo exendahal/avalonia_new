@@ -4,6 +4,7 @@ using avalonia_new.Region;
 using avalonia_new.Views;
 using Prism.Commands;
 using Prism.Regions;
+using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace avalonia_new.ViewModels
@@ -30,8 +31,8 @@ namespace avalonia_new.ViewModels
             LoginCommand = new DelegateCommand(LoginUser);
         }
 
-        private void LoginUser()
-        {
+        private async void LoginUser()
+        {           
             ToastHelper.ShowToast("Welcome", Services.ToastService.ToastType.Success);
             _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, nameof(WelcomePage));
         }

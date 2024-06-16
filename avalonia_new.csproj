@@ -9,24 +9,17 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
-
-  
-  <ItemGroup>
-    <AvaloniaResource Remove="Assets\Colors\AppResources.axaml" />
-    <AvaloniaResource Remove="Assets\Styles\AppStyles.axaml" />
-  </ItemGroup>
-
-  
-  <ItemGroup>
-    <EmbeddedResource Remove="Assets\Lang\Resources.resx" />
-  </ItemGroup>
   
   <ItemGroup>
     <ApplicationDefinition Include="Assets\avalonia-logo.svg" />
     <ApplicationDefinition Include="Assets\Fonts\material-font.ttf" />
+    <ApplicationDefinition Include="Assets\Colors\AppResources.axaml" />
+    <ApplicationDefinition Include="Assets\Styles\AppStyles.axaml" />
+    <ApplicationDefinition Include="Assets\Lang\Resources.Designer.cs" />
+    <ApplicationDefinition Include="Assets\Lang\Resources.resx" />
   </ItemGroup>
 
-  <ItemGroup>
+	<ItemGroup>
     <PackageReference Include="Avalonia" Version="11.0.10" />
     <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
@@ -45,17 +38,24 @@
     <AvaloniaXaml Update="Assets\Colors\AppResources.axaml">
       <SubType>Designer</SubType>
     </AvaloniaXaml>
-    <AvaloniaResource Update="Assets\Lang\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </AvaloniaResource>
-    <AvaloniaResource Update="Assets\Lang\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </AvaloniaResource>
     <AvaloniaXaml Update="Assets\Styles\AppStyles.axaml">
       <SubType>Designer</SubType>
     </AvaloniaXaml>
   </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Assets\Lang\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Assets\Lang\Resources.resx">
+			<Generator>PublicResXFileCodeGenerator</Generator>
+			<LastGenOutput>Resources.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
 </Project>

@@ -2,6 +2,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Markup.Xaml;
 using Avalonia.Media;
+using avalonia_new.Helper;
 using System.Windows.Input;
 
 namespace avalonia_new.Controls
@@ -9,10 +10,10 @@ namespace avalonia_new.Controls
     public partial class ToastMessage : UserControl
     {
         public static readonly StyledProperty<string> StatusTextProperty =
-            AvaloniaProperty.Register<ToastMessage, string>(nameof(StatusText), defaultValue: "Error");
+            AvaloniaProperty.Register<ToastMessage, string>(nameof(StatusText), defaultValue: ResourceHelper.GetResourceString("Error"));
 
         public static readonly StyledProperty<string> MessageTextProperty =
-            AvaloniaProperty.Register<ToastMessage, string>(nameof(MessageText), defaultValue: "SomethingWentWrong");
+            AvaloniaProperty.Register<ToastMessage, string>(nameof(MessageText), defaultValue: ResourceHelper.GetResourceString("SomethingWentWrong"));
 
         public static readonly StyledProperty<ISolidColorBrush> TextColorProperty =
      AvaloniaProperty.Register<ToastMessage, ISolidColorBrush>(nameof(TextColor), defaultValue: new SolidColorBrush(Colors.Black));

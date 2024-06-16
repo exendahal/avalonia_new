@@ -7,8 +7,6 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vm="clr-namespace:avalonia_new.ViewModels"
-    d:DesignHeight="450"
-    d:DesignWidth="800"
     prism:ViewModelLocator.AutoWireViewModel="True"
     x:DataType="vm:WelcomeViewModel"
     mc:Ignorable="d">
@@ -25,13 +23,13 @@
         <TextBlock
             HorizontalAlignment="Center"
             FontSize="32"
-            Text="Hello, World" />
-        <TextBlock HorizontalAlignment="Center" Text="Welcome to Avalonia" />
+            Text="{x:Static lang:Resources.HelloWorld}" />
+        <TextBlock HorizontalAlignment="Center" Text="{x:Static lang:Resources.Welcome}" />
 
         <Button
             Padding="12,8"
             HorizontalAlignment="Center"
-            Content="Click Me"
+            Content="{x:Static lang:Resources.ShowDialog}"
             Foreground="White" />
     </StackPanel>
 </UserControl>
