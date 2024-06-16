@@ -52,11 +52,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\ExploreView.axaml.cs">
+      <DependentUpon>ExploreView.axaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\HomePageContainerView.axaml.cs">
       <DependentUpon>HomePageContainerView.axaml</DependentUpon>
     </Compile>
-    <Compile Update="Views\WelcomeView.axaml.cs">
-      <DependentUpon>WelcomeView.axaml</DependentUpon>
+    <Compile Update="Views\AboutView.axaml.cs">
+      <DependentUpon>AboutView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

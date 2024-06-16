@@ -51,7 +51,7 @@
                 </StackPanel>
             </TabItem.Header>
             <TabItem.Content>
-                <view:WelcomeView />
+                <view:ExploreView />
             </TabItem.Content>
         </TabItem>
 
@@ -63,7 +63,7 @@
                 </StackPanel>
             </TabItem.Header>
             <TabItem.Content>
-                <view:WelcomeView />
+                <view:AboutView />
             </TabItem.Content>
         </TabItem>
 

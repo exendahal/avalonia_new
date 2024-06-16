@@ -1,10 +1,8 @@
 ﻿
-using avalonia_new.Helper;
 using avalonia_new.Region;
 using avalonia_new.Views;
 using Prism.Commands;
 using Prism.Regions;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace avalonia_new.ViewModels
@@ -34,7 +32,6 @@ namespace avalonia_new.ViewModels
         private void LoginUser()
         {    
             _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, nameof(HomePageContainerView));
-            ToastHelper.ShowToast("Welcome", Services.ToastService.ToastType.Success);
         }
     }
 }
