@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -10,13 +10,55 @@
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
+  
   <ItemGroup>
-    <PackageReference Include="Avalonia" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="Avalonia.Themes.Fluent" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="Avalonia.Fonts.Inter" Version="$(AvaloniaVersion)" />
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
+    <AvaloniaResource Remove="Assets\Colors\AppResources.axaml" />
+    <AvaloniaResource Remove="Assets\Styles\AppStyles.axaml" />
+    <AvaloniaResource Remove="Assets\Styles\ButtonStyles.axaml" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <EmbeddedResource Remove="Assets\Lang\Resources.resx" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <None Remove="Assets\Fonts\material-font.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Avalonia" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Themes.Fluent" Version="11.0.10" />
+    <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+	<PackageReference Include="Avalonia.Svg" Version="11.0.0.18" />
+	<PackageReference Include="Prism.Avalonia" Version="8.1.97.11073" />
+	<PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11073" />
+	<PackageReference Include="Sandreas.Avalonia.Preferences" Version="0.0.3" />
 
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="$(AvaloniaVersion)" />
+    <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaXaml Update="Assets\Colors\AppResources.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
+    <AvaloniaResource Update="Assets\Lang\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </AvaloniaResource>
+    <AvaloniaResource Update="Assets\Lang\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </AvaloniaResource>
+    <AvaloniaXaml Update="Assets\Styles\ButtonStyles.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
+    <AvaloniaXaml Update="Assets\Styles\AppStyles.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
   </ItemGroup>
 </Project>
