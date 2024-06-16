@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace avalonia_new.Views
 {
-    public partial class WelcomePage : UserControl
+    public partial class HomePageContainerView : UserControl
     {
-        public WelcomePage()
+        public HomePageContainerView()
         {
             InitializeComponent();
         }

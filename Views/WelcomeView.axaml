@@ -1,5 +1,5 @@
 <UserControl
-    x:Class="avalonia_new.Views.WelcomePage"
+    x:Class="avalonia_new.Views.WelcomeView"
     xmlns="https://github.com/avaloniaui"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -24,7 +24,7 @@
             HorizontalAlignment="Center"
             FontSize="32"
             Text="{x:Static lang:Resources.HelloWorld}" />
-        <TextBlock HorizontalAlignment="Center" Text="{x:Static lang:Resources.Welcome}" />
+        <TextBlock HorizontalAlignment="Center" Text="{x:Static lang:Resources.WelcomeToAvalonia}" />
 
         <Button
             Padding="12,8"

@@ -29,8 +29,11 @@
 	<PackageReference Include="Prism.Avalonia" Version="8.1.97.11073" />
 	<PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11073" />
 	<PackageReference Include="Sandreas.Avalonia.Preferences" Version="0.0.3" />
+	<PackageReference Include="Avalonia.Xaml.Behaviors" Version="11.0.10.9" />
+	<PackageReference Include="Avalonia.Xaml.Interactivity" Version="11.0.10.9" />
 
-    <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
+
+		<!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.0.10" />
   </ItemGroup>
 
@@ -48,6 +51,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Views\HomePageContainerView.axaml.cs">
+      <DependentUpon>HomePageContainerView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\WelcomeView.axaml.cs">
+      <DependentUpon>WelcomeView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 

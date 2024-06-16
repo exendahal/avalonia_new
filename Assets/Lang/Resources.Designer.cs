@@ -61,6 +61,15 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string About {
+            get {
+                return ResourceManager.GetString("About", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter password.
         /// </summary>
         public static string EnterPassword {
@@ -88,11 +97,29 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Explore.
+        /// </summary>
+        public static string Explore {
+            get {
+                return ResourceManager.GetString("Explore", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello, World.
         /// </summary>
         public static string HelloWorld {
             get {
                 return ResourceManager.GetString("HelloWorld", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string Home {
+            get {
+                return ResourceManager.GetString("Home", resourceCulture);
             }
         }
         
@@ -142,11 +169,20 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Welcome to Avalonia.
+        ///   Looks up a localized string similar to Welcome.
         /// </summary>
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome to Avalonia.
+        /// </summary>
+        public static string WelcomeToAvalonia {
+            get {
+                return ResourceManager.GetString("WelcomeToAvalonia", resourceCulture);
             }
         }
     }

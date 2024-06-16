@@ -14,8 +14,8 @@
         Padding="16"
         HorizontalAlignment="Center"
         VerticalAlignment="Center"
-        Background="{DynamicResource WhiteColor}"
-        BorderBrush="{Binding $parent[controls:ToastMessage].TextColor}"
+        Background="{DynamicResource ToastBackground}"
+        BorderBrush="{DynamicResource PrimaryDark}"
         BorderThickness="1"
         CornerRadius="5"
         ZIndex="100">
@@ -33,13 +33,13 @@
                 <TextBlock
                     VerticalAlignment="Center"
                     FontWeight="600"
-                    Foreground="{Binding $parent[controls:ToastMessage].TextColor}"
+                    Foreground="{DynamicResource ToastBodyColor}"
                     Text="{Binding $parent[controls:ToastMessage].StatusText}"
                     TextWrapping="Wrap" />
                 <TextBlock
                     VerticalAlignment="Center"
                     FontWeight="400"
-                    Foreground="{DynamicResource NotificationBodyColor}"
+                    Foreground="{DynamicResource ToastBodyColor}"
                     Text="{Binding $parent[controls:ToastMessage].MessageText}"
                     TextWrapping="Wrap" />
             </StackPanel>
@@ -53,7 +53,7 @@
                 Content="&#xf156;"
                 FontFamily="{StaticResource Material-Font}"
                 FontSize="22"
-                Foreground="{DynamicResource NotificationBodyColor}" />
+                Foreground="{DynamicResource ToastBodyColor}" />
         </Grid>
     </Border>
 </UserControl>

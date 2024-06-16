@@ -31,10 +31,10 @@ namespace avalonia_new.ViewModels
             LoginCommand = new DelegateCommand(LoginUser);
         }
 
-        private async void LoginUser()
-        {           
+        private void LoginUser()
+        {    
+            _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, nameof(HomePageContainerView));
             ToastHelper.ShowToast("Welcome", Services.ToastService.ToastType.Success);
-            _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, nameof(WelcomePage));
         }
     }
 }

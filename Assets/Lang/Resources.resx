@@ -117,6 +117,9 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="About" xml:space="preserve">
+    <value>About</value>
+  </data>
   <data name="EnterPassword" xml:space="preserve">
     <value>Enter password</value>
   </data>
@@ -126,8 +129,14 @@
   <data name="Error" xml:space="preserve">
     <value>Error</value>
   </data>
+  <data name="Explore" xml:space="preserve">
+    <value>Explore</value>
+  </data>
   <data name="HelloWorld" xml:space="preserve">
     <value>Hello, World</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
   </data>
   <data name="Login" xml:space="preserve">
     <value>Login</value>
@@ -145,6 +154,9 @@
     <value>Username</value>
   </data>
   <data name="Welcome" xml:space="preserve">
+    <value>Welcome</value>
+  </data>
+  <data name="WelcomeToAvalonia" xml:space="preserve">
     <value>Welcome to Avalonia</value>
   </data>
 </root>

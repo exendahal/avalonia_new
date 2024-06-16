@@ -1,5 +1,6 @@
 <ResourceDictionary xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
     <SolidColorBrush x:Key="Primary">#8b44ac</SolidColorBrush>
+    <SolidColorBrush x:Key="PrimaryDark">#242C32</SolidColorBrush>
     <SolidColorBrush x:Key="Secondary">#DFD8F7</SolidColorBrush>
     <SolidColorBrush x:Key="Tertiary">#2B0B98</SolidColorBrush>
     <SolidColorBrush x:Key="WhiteColor">#FFFFFF</SolidColorBrush>
@@ -7,5 +8,12 @@
     <SolidColorBrush x:Key="SuccessColor">#38B865</SolidColorBrush>
     <SolidColorBrush x:Key="FailColor">#F44336</SolidColorBrush>
     <SolidColorBrush x:Key="WarningColor">#FFC107</SolidColorBrush>
-
+    <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Dark">
+            <SolidColorBrush x:Key="ToastBackground" Color="{DynamicResource PrimaryDark}" />
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Light">
+            <SolidColorBrush x:Key="ToastBackground" Color="{DynamicResource WhiteColor}" />
+        </ResourceDictionary>
+    </ResourceDictionary.ThemeDictionaries>
 </ResourceDictionary>
