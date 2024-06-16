@@ -14,17 +14,16 @@
   <ItemGroup>
     <AvaloniaResource Remove="Assets\Colors\AppResources.axaml" />
     <AvaloniaResource Remove="Assets\Styles\AppStyles.axaml" />
-    <AvaloniaResource Remove="Assets\Styles\ButtonStyles.axaml" />
   </ItemGroup>
 
   
   <ItemGroup>
     <EmbeddedResource Remove="Assets\Lang\Resources.resx" />
   </ItemGroup>
-
   
   <ItemGroup>
-    <None Remove="Assets\Fonts\material-font.ttf" />
+    <ApplicationDefinition Include="Assets\avalonia-logo.svg" />
+    <ApplicationDefinition Include="Assets\Fonts\material-font.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +32,7 @@
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.0.10" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
 	<PackageReference Include="Avalonia.Svg" Version="11.0.0.18" />
+	<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
 	<PackageReference Include="Prism.Avalonia" Version="8.1.97.11073" />
 	<PackageReference Include="Prism.DryIoc.Avalonia" Version="8.1.97.11073" />
 	<PackageReference Include="Sandreas.Avalonia.Preferences" Version="0.0.3" />
@@ -54,11 +54,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </AvaloniaResource>
-    <AvaloniaXaml Update="Assets\Styles\ButtonStyles.axaml">
-      <SubType>Designer</SubType>
-    </AvaloniaXaml>
     <AvaloniaXaml Update="Assets\Styles\AppStyles.axaml">
       <SubType>Designer</SubType>
     </AvaloniaXaml>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\" />
   </ItemGroup>
 </Project>

@@ -1,6 +1,8 @@
-﻿namespace avalonia_new.ViewModels;
+﻿using Prism.Mvvm;
 
-public partial class MainViewModel : ViewModelBase
+namespace avalonia_new.ViewModels;
+
+public partial class MainViewModel : BindableBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    
 }
