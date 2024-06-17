@@ -7,253 +7,126 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:prism="http://prismlibrary.com/"
     xmlns:vm="clr-namespace:avalonia_new.ViewModels"
+    x:Name="ExplorePage"
     prism:ViewModelLocator.AutoWireViewModel="True"
     x:DataType="vm:AboutViewModel"
     mc:Ignorable="d">
-    <ScrollViewer>
-        <StackPanel
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            Spacing="25">
-            <Image
-                Width="160"
-                Height="160"
+    <Grid>
+        <Panel
+            Background="{DynamicResource PopupBackgroundColor}"
+            IsVisible="{Binding ShowPopup}"
+            ZIndex="1" />
+        <Popup
+            IsOpen="{Binding ShowPopup}"
+            PlacementMode="Center"
+            PlacementTarget="{Binding #ExplorePage}"
+            Topmost="True">
+            <Border
+                Padding="24"
+                Background="{DynamicResource ToastBackground}"
+                CornerRadius="8">
+                <Grid RowDefinitions="Auto,12,Auto,24,Auto">
+                    <TextBlock
+                        HorizontalAlignment="Center"
+                        FontSize="32"
+                        Text="Alert!" />
+
+                    <TextBlock
+                        Grid.Row="2"
+                        HorizontalAlignment="Left"
+                        FontSize="18"
+                        Text="Click close to dismiss alert!!" />
+                    <Button
+                        Grid.Row="4"
+                        Padding="8,6"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"
+                        Command="{Binding ClosePopup}"
+                        Content="Close"
+                        Foreground="{DynamicResource WhiteColor}" />
+                </Grid>
+
+            </Border>
+        </Popup>
+        <ScrollViewer>
+            <StackPanel
                 HorizontalAlignment="Center"
                 VerticalAlignment="Center"
-                Source="avares://avalonia_new/Assets/avalonia-logo.ico" />
-            <TextBlock
-                HorizontalAlignment="Center"
-                FontSize="32"
-                Text="{x:Static lang:Resources.Explore}" />
-
-
-
-            <Grid ColumnDefinitions="Auto,12,Auto,12,Auto" RowDefinitions="Auto,12,Auto,24,Auto,12,Auto,24,Auto,12,Auto,24,Auto,12,Auto,24,Auto,12,Auto,24">
+                Spacing="25">
+                <Image
+                    Width="160"
+                    Height="160"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Source="avares://avalonia_new/Assets/avalonia-logo.ico" />
                 <TextBlock
-                    HorizontalAlignment="Left"
-                    FontSize="18"
-                    Text="Toast &amp; Font Icon" />
-                <Button
-                    Grid.Row="2"
-                    Grid.Column="0"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="0"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel Orientation="Horizontal" Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf133;" />
-                        <TextBlock
-                            VerticalAlignment="Center"
-                            FontSize="16"
-                            Text="Success Toast" />
-                    </StackPanel>
-                </Button>
+                    HorizontalAlignment="Center"
+                    FontSize="32"
+                    Text="{x:Static lang:Resources.Explore}" />
 
-                <Button
-                    Grid.Row="2"
-                    Grid.Column="2"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="1"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf028;" />
-                        <TextBlock FontSize="16" Text="Waring Toast" />
-                    </StackPanel>
-                </Button>
-
-                <Button
-                    Grid.Row="2"
-                    Grid.Column="4"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="2"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf159;" />
-                        <TextBlock FontSize="16" Text="Error Toast" />
-                    </StackPanel>
-                </Button>
-
-                <TextBlock
-                    Grid.Row="4"
-                    HorizontalAlignment="Left"
-                    FontSize="18"
-                    Text="Display Alert" />
-
-                <Button
-                    Grid.Row="6"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="3"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf554;" />
-                        <TextBlock FontSize="16" Text="Dialog Popup" />
-                    </StackPanel>
-                </Button>
-
-                <TextBlock
-                    Grid.Row="8"
-                    HorizontalAlignment="Left"
-                    FontSize="18"
-                    Text="Navigation" />
-
-                <Button
-                    Grid.Row="10"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="4"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf054;" />
-                        <TextBlock FontSize="16" Text="Navigation" />
-                    </StackPanel>
-                </Button>
-
-                <TextBlock
-                    Grid.Row="12"
-                    HorizontalAlignment="Left"
-                    FontSize="18"
-                    Text="Theme" />
-
-                <Button
-                    Grid.Row="14"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="5"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf50e;" />
-                        <TextBlock FontSize="16" Text="Dark Theme" />
-                    </StackPanel>
-                </Button>
-
-                <Button
-                    Grid.Row="14"
-                    Grid.Column="2"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="6"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf50e;" />
-                        <TextBlock FontSize="16" Text="Light Theme" />
-                    </StackPanel>
-                </Button>
-
-                <TextBlock
-                    Grid.Row="16"
-                    HorizontalAlignment="Left"
-                    FontSize="18"
-                    Text="Localization" />
-
-                <Button
-                    Grid.Row="18"
-                    Padding="8,6"
-                    HorizontalContentAlignment="Center"
-                    VerticalContentAlignment="Center"
-                    Command="{Binding ButtonCommand}"
-                    CommandParameter="7"
-                    Foreground="{DynamicResource WhiteColor}">
-                    <StackPanel
-                        VerticalAlignment="Center"
-                        Orientation="Horizontal"
-                        Spacing="6">
-                        <TextBlock
-                            Width="18"
-                            Height="18"
-                            VerticalAlignment="Center"
-                            FontFamily="{StaticResource Material-Font}"
-                            FontSize="18"
-                            Foreground="{DynamicResource WhiteColor}"
-                            Text="&#xf5ca;" />
-                        <TextBlock FontSize="16" Text="Localization" />
-                    </StackPanel>
-                </Button>
-            </Grid>
-        </StackPanel>
-    </ScrollViewer>
+                <ListBox
+                    HorizontalAlignment="Stretch"
+                    VerticalAlignment="Stretch"
+                    ItemsSource="{Binding ExploreList}">
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel
+                                Margin="0,12"
+                                Background="Transparent"
+                                Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel>
+                                <TextBlock
+                                    Margin="0,12,0,0"
+                                    HorizontalAlignment="Left"
+                                    FontSize="18"
+                                    Text="{Binding Title}" />
+                                <ItemsControl ItemsSource="{Binding FeatureList}">
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <WrapPanel
+                                                Margin="0,12"
+                                                Background="Transparent"
+                                                Orientation="Horizontal" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Button
+                                                Margin="0,0,12,0"
+                                                Padding="8,6"
+                                                HorizontalContentAlignment="Center"
+                                                VerticalContentAlignment="Center"
+                                                Command="{Binding $parent[ListBox].((vm:ExploreViewModel)DataContext).ButtonCommand}"
+                                                CommandParameter="{Binding}"
+                                                Foreground="{DynamicResource WhiteColor}">
+                                                <StackPanel Orientation="Horizontal" Spacing="6">
+                                                    <TextBlock
+                                                        Width="18"
+                                                        Height="18"
+                                                        VerticalAlignment="Center"
+                                                        FontFamily="{StaticResource Material-Font}"
+                                                        FontSize="18"
+                                                        Foreground="{DynamicResource WhiteColor}"
+                                                        Text="{Binding FontIcon}" />
+                                                    <TextBlock
+                                                        VerticalAlignment="Center"
+                                                        FontSize="16"
+                                                        Text="{Binding FeatureName}" />
+                                                </StackPanel>
+                                            </Button>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
 
 </UserControl>

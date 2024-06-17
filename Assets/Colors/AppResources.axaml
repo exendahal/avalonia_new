@@ -8,6 +8,7 @@
     <SolidColorBrush x:Key="SuccessColor">#38B865</SolidColorBrush>
     <SolidColorBrush x:Key="FailColor">#F44336</SolidColorBrush>
     <SolidColorBrush x:Key="WarningColor">#FFC107</SolidColorBrush>
+    <SolidColorBrush x:Key="PopupBackgroundColor">#AA000000</SolidColorBrush>
     <ResourceDictionary.ThemeDictionaries>
         <ResourceDictionary x:Key="Dark">
             <SolidColorBrush x:Key="ToastBackground">#242C32</SolidColorBrush>
