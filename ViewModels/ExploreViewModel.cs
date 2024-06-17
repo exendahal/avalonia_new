@@ -1,4 +1,6 @@
-﻿using avalonia_new.Helper;
+﻿using Avalonia.Themes.Fluent;
+using Avalonia;
+using avalonia_new.Helper;
 using avalonia_new.Model;
 using avalonia_new.Region;
 using avalonia_new.Views;
@@ -6,16 +8,29 @@ using Prism.Commands;
 using Prism.Regions;
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Avalonia.Styling;
+using Prism.Events;
+using avalonia_new.Events;
 
 namespace avalonia_new.ViewModels
 {
     public class ExploreViewModel : ViewModelBase
     {
+        private readonly IEventAggregator _eventAggregator;
+
         bool _ShowPopup = false;
         public bool ShowPopup
         {
             get => _ShowPopup;
-            set => SetProperty(ref _ShowPopup, value);
+            set
+            {
+                if (_ShowPopup != value)
+                {
+                    _ShowPopup = value;
+                    _eventAggregator.GetEvent<PopUpEvent>().Publish(new PopUpEventData(value));
+                    RaisePropertyChanged(nameof(ShowPopup));
+                }
+            }
         }
 
         public ICommand ButtonCommand { get; }
@@ -28,8 +43,9 @@ namespace avalonia_new.ViewModels
             set => SetProperty(ref _ExploreList, value);
 
         }
-        public ExploreViewModel(IRegionManager regionManager) : base(regionManager)
+        public ExploreViewModel(IRegionManager regionManager, IEventAggregator eventAggregator) : base(regionManager)
         {
+            _eventAggregator = eventAggregator;
             ButtonCommand = new DelegateCommand<ExploreItemModel>(GeneralCommand);
             ClosePopup = new DelegateCommand(CloseDialogPopup);
             GenerateExploreDat();
@@ -53,10 +69,32 @@ namespace avalonia_new.ViewModels
                     ToastHelper.ShowToast("Error toast", Services.ToastService.ToastType.Error);
                     break;
                 case 4:
-                    ShowPopup = true;
+                    ShowPopup = true;                  
                     break;
-                case 5:
+                case 5:                   
                     _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, nameof(ChildView));
+                    break;
+                case 6:
+                    var fluentTheme = Application.Current?.RequestedThemeVariant;
+                    if (fluentTheme != ThemeVariant.Dark)
+                    {
+                        Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
+                    }
+                    break;
+                case 7:
+                    var currentTheme = Application.Current?.RequestedThemeVariant;
+                    if (currentTheme != ThemeVariant.Light)
+                    {
+                        Application.Current.RequestedThemeVariant = ThemeVariant.Light;
+                    }
+                    break;
+
+                case 8:
+                    
+                    break;
+
+                case 9:
+                    
                     break;
             }
         }

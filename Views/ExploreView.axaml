@@ -12,10 +12,7 @@
     x:DataType="vm:AboutViewModel"
     mc:Ignorable="d">
     <Grid>
-        <Panel
-            Background="{DynamicResource PopupBackgroundColor}"
-            IsVisible="{Binding ShowPopup}"
-            ZIndex="1" />
+       
         <Popup
             IsOpen="{Binding ShowPopup}"
             PlacementMode="Center"
