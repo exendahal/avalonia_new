@@ -50,7 +50,7 @@ public class ViewModelBase : BindableBase, INavigationAware, IActiveAware
     }
     public IRegionManager Navigation => _regionManager;
 
-    public virtual DelegateCommand CmdNavigateBack => new DelegateCommand(() =>
+    public virtual DelegateCommand GoBackCommand => new DelegateCommand(() =>
     {
         // Go back to the previous calling page, otherwise, Dashboard.
         if (_journal != null && _journal.CanGoBack)

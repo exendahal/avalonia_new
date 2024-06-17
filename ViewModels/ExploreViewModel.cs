@@ -1,5 +1,7 @@
 ﻿using avalonia_new.Helper;
 using avalonia_new.Model;
+using avalonia_new.Region;
+using avalonia_new.Views;
 using Prism.Commands;
 using Prism.Regions;
 using System.Collections.ObjectModel;
@@ -52,6 +54,9 @@ namespace avalonia_new.ViewModels
                     break;
                 case 4:
                     ShowPopup = true;
+                    break;
+                case 5:
+                    _regionManager.RequestNavigate(RegionNames.CONTENT_REGION, nameof(ChildView));
                     break;
             }
         }

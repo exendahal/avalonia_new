@@ -47,6 +47,7 @@ public class App : PrismApplication
         containerRegistry.RegisterForNavigation<HomePageContainerView, HomePageContainerViewModel>();
         containerRegistry.RegisterForNavigation<AboutView, AboutViewModel>();
         containerRegistry.RegisterForNavigation<ExploreView, ExploreViewModel>();
+        containerRegistry.RegisterForNavigation<ChildView, ChildViewModel>();
     }
 
     protected override AvaloniaObject CreateShell()

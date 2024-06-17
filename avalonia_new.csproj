@@ -44,6 +44,9 @@
     <AvaloniaXaml Update="Assets\Styles\AppStyles.axaml">
       <SubType>Designer</SubType>
     </AvaloniaXaml>
+    <AvaloniaXaml Update="Views\ChildView.axaml">
+      <SubType>Designer</SubType>
+    </AvaloniaXaml>
   </ItemGroup>
 
   <ItemGroup>
@@ -60,6 +63,10 @@
     </Compile>
     <Compile Update="Views\AboutView.axaml.cs">
       <DependentUpon>AboutView.axaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\ChildView.axaml.cs">
+      <SubType>Code</SubType>
+      <DependentUpon>ChildView.axaml</DependentUpon>
     </Compile>
   </ItemGroup>
 
