@@ -14,6 +14,8 @@
     </Style>
     <Style Selector="Button">
         <Setter Property="Background" Value="{DynamicResource Primary}" />
+        <Setter Property="MinHeight" Value="42" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
     </Style>
 
     <Style Selector="TextBox">

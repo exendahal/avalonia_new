@@ -9,6 +9,12 @@
   <ItemGroup>
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
+
+  
+  <ItemGroup>
+    <EmbeddedResource Remove="Assets\Lang\Resources.en-US.resx" />
+    <EmbeddedResource Remove="Assets\Lang\Resources.ne-NP.resx" />
+  </ItemGroup>
   
   <ItemGroup>
     <ApplicationDefinition Include="Assets\avalonia-logo.svg" />

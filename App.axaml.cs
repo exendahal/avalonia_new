@@ -62,17 +62,7 @@ public class App : PrismApplication
 
     public override void OnFrameworkInitializationCompleted()
     {
-        var services = new ServiceCollection();
-        if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
-        {
-            //services.AddSingleton<IFilesService>(x => new FilesService(desktop.MainWindow));
-        }
-        else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
-        {
-            //services.AddSingleton<IFilesService>(x => new FilesService(TopLevel.GetTopLevel(singleViewPlatform.MainView)));
-        }
-
-
+        var services = new ServiceCollection();        
         Services = services.BuildServiceProvider();
         services.AddSingleton<Preferences>();
         base.OnFrameworkInitializationCompleted();

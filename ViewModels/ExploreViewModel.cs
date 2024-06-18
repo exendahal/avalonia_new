@@ -1,5 +1,4 @@
-﻿using Avalonia.Themes.Fluent;
-using Avalonia;
+﻿using Avalonia;
 using avalonia_new.Helper;
 using avalonia_new.Model;
 using avalonia_new.Region;
@@ -11,6 +10,7 @@ using System.Windows.Input;
 using Avalonia.Styling;
 using Prism.Events;
 using avalonia_new.Events;
+using System.Globalization;
 
 namespace avalonia_new.ViewModels
 {
@@ -90,11 +90,11 @@ namespace avalonia_new.ViewModels
                     break;
 
                 case 8:
-                    
+                    Assets.Lang.Resources.Culture = new CultureInfo("en-US");
                     break;
 
                 case 9:
-                    
+                    Assets.Lang.Resources.Culture = new CultureInfo("ne-NP");
                     break;
             }
         }
