@@ -11,6 +11,7 @@ using Avalonia.Styling;
 using Prism.Events;
 using avalonia_new.Events;
 using System.Globalization;
+using avalonia_new.Services;
 
 namespace avalonia_new.ViewModels
 {
@@ -90,11 +91,11 @@ namespace avalonia_new.ViewModels
                     break;
 
                 case 8:
-                    Assets.Lang.Resources.Culture = new CultureInfo("en-US");
+                    LanguageManager.Translate("Resources.en-US");
                     break;
 
                 case 9:
-                    Assets.Lang.Resources.Culture = new CultureInfo("ne-NP");
+                    LanguageManager.Translate("Resources.ne-NP");
                     break;
             }
         }
