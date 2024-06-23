@@ -12,8 +12,9 @@
 
   
   <ItemGroup>
-    <EmbeddedResource Remove="Assets\Lang\Resources.en-US.resx" />
-    <EmbeddedResource Remove="Assets\Lang\Resources.ne-NP.resx" />
+    <AvaloniaResource Remove="Assets\Lang\Resources.en-US.resx" />
+    <AvaloniaResource Remove="Assets\Lang\Resources.ne-NP.resx" />
+    <AvaloniaResource Remove="Assets\Lang\Resources.resx" />
   </ItemGroup>
   
   <ItemGroup>

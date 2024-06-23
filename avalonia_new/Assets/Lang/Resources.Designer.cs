@@ -80,6 +80,15 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Dark Theme.
+        /// </summary>
+        public static string DarkTheme {
+            get {
+                return ResourceManager.GetString("DarkTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Enter password.
         /// </summary>
         public static string EnterPassword {
@@ -116,6 +125,15 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Failed Toast.
+        /// </summary>
+        public static string FailedToast {
+            get {
+                return ResourceManager.GetString("FailedToast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Hello, World.
         /// </summary>
         public static string HelloWorld {
@@ -134,6 +152,24 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Light Theme.
+        /// </summary>
+        public static string LightTheme {
+            get {
+                return ResourceManager.GetString("LightTheme", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Localization.
+        /// </summary>
+        public static string Localization {
+            get {
+                return ResourceManager.GetString("Localization", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Login.
         /// </summary>
         public static string Login {
@@ -143,11 +179,29 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Navigation.
+        /// </summary>
+        public static string Navigation {
+            get {
+                return ResourceManager.GetString("Navigation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Password.
         /// </summary>
         public static string Password {
             get {
                 return ResourceManager.GetString("Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Popup Alert.
+        /// </summary>
+        public static string PopUpAlert {
+            get {
+                return ResourceManager.GetString("PopUpAlert", resourceCulture);
             }
         }
         
@@ -170,11 +224,38 @@ namespace avalonia_new.Assets.Lang {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Success Toast.
+        /// </summary>
+        public static string SuccessToast {
+            get {
+                return ResourceManager.GetString("SuccessToast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Toast and Font Icon.
+        /// </summary>
+        public static string ToastAndFontIcon {
+            get {
+                return ResourceManager.GetString("ToastAndFontIcon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Username.
         /// </summary>
         public static string UserName {
             get {
                 return ResourceManager.GetString("UserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Warning Toast.
+        /// </summary>
+        public static string WarningToast {
+            get {
+                return ResourceManager.GetString("WarningToast", resourceCulture);
             }
         }
         

@@ -10,8 +10,8 @@ using System.Windows.Input;
 using Avalonia.Styling;
 using Prism.Events;
 using avalonia_new.Events;
-using System.Globalization;
 using avalonia_new.Services;
+using avalonia_new.Constants;
 
 namespace avalonia_new.ViewModels
 {
@@ -61,13 +61,13 @@ namespace avalonia_new.ViewModels
             switch(obj.Id)
             {
                 case 1:
-                    ToastHelper.ShowToast("Success toast", Services.ToastService.ToastType.Success);
+                    ToastHelper.ShowToast(ResourceHelper.GetResourceString("SuccessToast"), ToastService.ToastType.Success);
                     break;
                 case 2:
-                    ToastHelper.ShowToast("Warning toast", Services.ToastService.ToastType.Warning);
+                    ToastHelper.ShowToast(ResourceHelper.GetResourceString("WarningToast"), ToastService.ToastType.Warning);
                     break;
                 case 3:
-                    ToastHelper.ShowToast("Error toast", Services.ToastService.ToastType.Error);
+                    ToastHelper.ShowToast(ResourceHelper.GetResourceString("FailedToast"), ToastService.ToastType.Error);
                     break;
                 case 4:
                     ShowPopup = true;                  
@@ -80,6 +80,7 @@ namespace avalonia_new.ViewModels
                     if (fluentTheme != ThemeVariant.Dark)
                     {
                         Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
+                        PreferenceService.SetValue(PreferencesKeys.IS_DARK_MODE,true);
                     }
                     break;
                 case 7:
@@ -87,15 +88,18 @@ namespace avalonia_new.ViewModels
                     if (currentTheme != ThemeVariant.Light)
                     {
                         Application.Current.RequestedThemeVariant = ThemeVariant.Light;
+                        PreferenceService.SetValue(PreferencesKeys.IS_DARK_MODE, false);
                     }
                     break;
 
                 case 8:
-                    LanguageManager.Translate("Resources.en-US");
+                    LanguageManager.ChangeLanguage("en-US");
+                    PreferenceService.SetValue(PreferencesKeys.CULTURE, "en-US");
                     break;
 
                 case 9:
-                    LanguageManager.Translate("Resources.ne-NP");
+                    LanguageManager.ChangeLanguage("ne-NP");
+                    PreferenceService.SetValue(PreferencesKeys.CULTURE, "ne-NP");
                     break;
             }
         }
@@ -105,31 +109,31 @@ namespace avalonia_new.ViewModels
             ExploreList.Add(new ExploreModel()
             {
                 Id = 1,
-                Title = "Toast & Font Icon",
+                Title = ResourceHelper.GetResourceString("ToastAndFontIcon"),
                 FeatureList =
                 [
-                        new ExploreItemModel { Id = 1, FeatureName = "Success Toast", FontIcon="\uf133" },
-                        new ExploreItemModel { Id = 2, FeatureName = "Warning Toast" , FontIcon="\uf028"},
-                         new ExploreItemModel { Id = 3, FeatureName = "Error Toast",FontIcon="\uf159" }
+                        new ExploreItemModel { Id = 1, FeatureName = ResourceHelper.GetResourceString("SuccessToast"), FontIcon="\uf133" },
+                        new ExploreItemModel { Id = 2, FeatureName = ResourceHelper.GetResourceString("WarningToast") , FontIcon="\uf028"},
+                         new ExploreItemModel { Id = 3, FeatureName = ResourceHelper.GetResourceString("FailedToast"),FontIcon="\uf159" }
                 ]
             });
             ExploreList.Add(new ExploreModel()
             {
                 Id = 2,
-                Title = "Display Alert",
+                Title = ResourceHelper.GetResourceString("PopUpAlert"),
                 FeatureList =
                 [
-                        new ExploreItemModel { Id = 4, FeatureName = "Dialog Popup",FontIcon="\uf554" }
+                        new ExploreItemModel { Id = 4, FeatureName = ResourceHelper.GetResourceString("PopUpAlert"),FontIcon="\uf554" }
                 ]
             });
 
             ExploreList.Add(new ExploreModel()
             {
                 Id = 3,
-                Title = "Navigation",
+                Title = ResourceHelper.GetResourceString("Navigation"),
                 FeatureList =
                 [
-                        new ExploreItemModel { Id = 5, FeatureName = "Navigation",FontIcon="\uf054" }
+                        new ExploreItemModel { Id = 5, FeatureName = ResourceHelper.GetResourceString("Navigation"),FontIcon="\uf054" }
                 ]
             });
 
@@ -139,15 +143,15 @@ namespace avalonia_new.ViewModels
                 Title = "Theme",
                 FeatureList =
                 [
-                        new ExploreItemModel { Id = 6, FeatureName = "Dark Theme",FontIcon="\uf50e" },
-                        new ExploreItemModel { Id = 7, FeatureName = "Light Theme",FontIcon="\uf50e" }
+                        new ExploreItemModel { Id = 6, FeatureName = ResourceHelper.GetResourceString("DarkTheme"),FontIcon="\uf50e" },
+                        new ExploreItemModel { Id = 7, FeatureName = ResourceHelper.GetResourceString("LightTheme"),FontIcon="\uf50e" }
                 ]
             });
 
             ExploreList.Add(new ExploreModel()
             {
                 Id = 5,
-                Title = "Localization",
+                Title = ResourceHelper.GetResourceString("Localization"),
                 FeatureList =
                 [
                         new ExploreItemModel { Id = 8, FeatureName = "English",FontIcon="\uf5ca" },

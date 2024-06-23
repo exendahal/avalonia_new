@@ -3,7 +3,10 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using Avalonia.Preferences;
+using Avalonia.Styling;
+using avalonia_new.Constants;
 using avalonia_new.Region;
+using avalonia_new.Services;
 using avalonia_new.ViewModels;
 using avalonia_new.Views;
 using Microsoft.Extensions.DependencyInjection;
@@ -68,7 +71,16 @@ public class App : PrismApplication
         base.OnFrameworkInitializationCompleted();
     }
     protected override void OnInitialized()
-    {
+    {        
+        bool isDarkMode = PreferenceService.GetValue<bool>(PreferencesKeys.IS_DARK_MODE);
+        if (isDarkMode)
+            Application.Current.RequestedThemeVariant = ThemeVariant.Dark;
+        else
+            Application.Current.RequestedThemeVariant = ThemeVariant.Light;
+
+        string culture = PreferenceService.GetValue<string>(PreferencesKeys.CULTURE);
+        LanguageManager.ChangeLanguage(culture);
+
         var regionManager = Container.Resolve<IRegionManager>();
         RegionManager.SetRegionManager(MainWindow, regionManager);
         regionManager.RegisterViewWithRegion(RegionNames.CONTENT_REGION, typeof(LandingView));
